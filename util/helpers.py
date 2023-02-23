@@ -12,6 +12,8 @@ class Helpers():
         embed.set_author(name=f"{user}", icon_url=user.display_avatar.url, url=f"https://discord.com/users/{user.id}")
         embed.set_image(url=user.display_avatar)
         embed.set_footer(text=f"{self.bot.util.footer}", icon_url=self.bot.util.footer_icon)
+        ctx.config = self.bot.config
+        ctx.util = self.bot.util   
         view = views.UserMenu(ctx)
         view.children[0].placeholder = self.bot.util.locale(ctx, "user_select_menu", type="Interactions")
         async def run(i: discord.Interaction, user: discord.User, message: discord.Message):

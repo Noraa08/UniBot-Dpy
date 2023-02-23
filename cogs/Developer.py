@@ -1,9 +1,8 @@
-import discord, datetime, contextlib, io, re, textwrap, traceback
+import discord, datetime, contextlib, io, re, textwrap, traceback, subprocess
 from traceback import format_exception
 from discord.ext import commands
 from main import db, util
 from util import ext
-import subprocess
 from contextlib import redirect_stdout
 from typing import TYPE_CHECKING, Any, Awaitable, Callable, Union, Optional
 from discord.ext.commands import Context
@@ -40,25 +39,27 @@ class Dev(commands.Cog):
             return f'```py\n{e.__class__.__name__}: {e}\n```'
         return f'```py\n{e.text}{"^":>{e.offset}}\n{e.__class__.__name__}: {e}```'
 
-    @commands.command(hidden=True, name='eval2')
+    @commands.command(hidden=True, name='eval', aliases=["e"])
     async def _eval2(self, ctx: Context, *, body: str):
         """Evaluates a code"""
-
         env = {
             'bot': self.bot,
             'ctx': ctx,
+            'util': util,
             'channel': ctx.channel,
             'author': ctx.author,
             'guild': ctx.guild,
             'message': ctx.message,
             '_': self._last_result,
         }
-
+        #print(100, bot.pool)
         env.update(globals())
 
+        if "--p" in body or "--print" in body:
+            body = f'print({re.sub("--p(rint)?", "", body, flags=re.IGNORECASE)})'
+        
         body = self.cleanup_code(body)
         stdout = io.StringIO()
-
         to_compile = f'async def func():\n{textwrap.indent(body, "  ")}'
 
         try:
@@ -67,7 +68,6 @@ class Dev(commands.Cog):
             return await ctx.send(f'```py\n{e.__class__.__name__}: {e}```')
 
         func = env['func']
-        print(func)
 
         try:
             with redirect_stdout(stdout):
@@ -82,69 +82,19 @@ class Dev(commands.Cog):
             except:
                 pass
 
-            if ret is None:
-                if out:
-                    self._last_result = stdout.getvalue()
-                    await ctx.send(f'```py\n{out}```')
-            else:
-                embed = discord.Embed(
-                    title="<:eg_right:1029412506743091280> Successful Evaluation.",
-                    description=f'```py\n{out if out else "[ No output ]" }```',
-                    color=0x202126,
-                    timestamp=datetime.datetime.now(),
-                )
-                embed.add_field(name="Input", value=f"\n```{util.set_lines(body)}```")
-        
-                self._last_result = ret
-                await ctx.send(embed=embed)
-
-        
-    @commands.command(name="eval", aliases=["ev", "e"])
-    @commands.is_owner()
-    async def _eval(self, ctx: commands.Context, *, text=None):
-        if not text:
-            return await util.throw_error(
-                ctx,
-                es="¡Necesita proporcionar un código para evaluar!",
-                en="You need to provide a code to evaluate!",
-                pt="..",
-                fr="..",
+            embed = discord.Embed(
+                title="<:output:1059923343320559616> Output",
+                description=f'```py\n{out if out else "[ No output ]" }{ret if ret else ""}```',
+                color=0x303136,
+                timestamp=datetime.datetime.now(),
             )
-
-        def clean_code(code: str):
-            if code.startswith("\`\`\`") and code.endswith("\`\`\`"):
-                return "\n".join(code.split("\n")[1:])[:-3]
-            return code
-
-        code = clean_code(text)
-        if "--p" in code or "--print" in code:
-            code = f'print({re.sub("--p(rint)?", "", code, flags=re.IGNORECASE)})'
-        local_variables = {
-            "discord": discord,
-            "commands": commands,
-            "bot": commands.Bot,
-            "ctx": ctx,
-            "db": db,
-            "util": util,
-        }
-        stdout = io.StringIO()
-        try:
-            with contextlib.redirect_stdout(stdout):
-                exec(code, local_variables)
-        except Exception as err:
-            return await ctx.send(
-                f'```py\n{"".join(format_exception(err, err, err.__traceback__))}```',
-            )
-        out = util.set_lines(stdout.getvalue())
-        intup = util.set_lines(text)
-        embed = discord.Embed(
-            title="<:eg_right:1029412506743091280> Successful Evaluation.",
-            description=f'```py\n{out if stdout.getvalue() else "[ No output ]" }```',
-            color=0x202126,
-            timestamp=datetime.datetime.now(),
-        )
-        embed.add_field(name="Input", value=f"\n```{intup}```")
-        await ctx.send(embed=embed)
+            embed.add_field(name="<:input:1059923472450592879> Input", value=f"\n```{util.set_lines(body)}```")
+            embed.set_footer(text=f"{util.footer}", icon_url=util.footer_icon)
+            embed.set_author(name=f"{ctx.author}", icon_url=ctx.author.display_avatar.url)#, url=f"https://discord.com/users/{user.id}")
+            embed.set_thumbnail(url="https://media.discordapp.net/attachments/1009994680685039716/1059924591281188946/lupa.png")
+            
+            self._last_result = ret if ret else out
+            await ctx.send(embed=embed)
 
     @commands.command(name="load")
     @commands.is_owner()

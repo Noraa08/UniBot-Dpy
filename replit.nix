@@ -1,5 +1,6 @@
 { pkgs }: {
   deps = [
+    pkgs.flyctl
     pkgs.python38Full
   ];
   env = {
@@ -7,6 +8,7 @@
       # Needed for pandas / numpy
       pkgs.stdenv.cc.cc.lib
       pkgs.zlib
+      pkgs.icu.dev
       # Needed for pygame
       pkgs.glib
       # Needed for matplotlib

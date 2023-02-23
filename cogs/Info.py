@@ -1,7 +1,7 @@
 import discord, datetime, contextlib, io, re
 from traceback import format_exception
 from discord.ext import commands
-from main import db, util
+from main import db, util, cmds
 from util import ext, views
 from cogs.Util import Util
 
@@ -48,18 +48,20 @@ class Info(commands.Cog):
             desc = desc.replace("{user_nick}", f"{util.locale(ctx, 'nickname', cmd='info')} {user.nick}" if user.nick else "").replace("{user_name}", f"{user}").replace("{user_id}", f"`{user.id}`").replace("{user_color}", f"`{str(user.color).replace('#0000000', '#95a5a6')}`")
             embed.description = desc
             embed.set_thumbnail(url=user.display_avatar)
-            embed.fields[0].value = f"_ _ <t:{round(user.created_at.timestamp())}>"
-            embed.fields[1].value = f"_ _ <t:{round(user.joined_at.timestamp())}>"
-            embed.fields[2].value = ", ".join(reversed([r.mention for r in user.roles]))
+            embed.set_field_at(0, name=util.locale(ctx, "embed_field_created", cmd="info"), value=f"_ _ <t:{round(user.created_at.timestamp())}>")
+            embed.set_field_at(1, name=util.locale(ctx, "embed_field_joined", cmd="info"), value=f"_ _ <t:{round(user.joined_at.timestamp())}>")
+            embed.set_field_at(2, name=util.locale(ctx, "embed_field_roles", cmd="info"), value=", ".join(reversed([r.mention for r in user.roles])))
             await i.response.edit_message(embed=embed)
-        view = views.UserMenu(ctx)
+        ctx.config = self.bot.config
+        ctx.util = util
+        view = views.UserMenu(ctx, self.bot.config, util)
         view.children[0].placeholder = util.locale(ctx, "user_select_menu", type="Interactions")
         view.do_something = run
         view.message = await ctx.send(embed=embed, view=view)
         
     @user.command(name="avatar", aliases=["av", "pfp"])
     async def avatar(self, ctx: commands.Context, user: discord.User = None) -> None:
-        await Util.avatar(self, ctx, user)
+        await cmds.Avatar(ctx, user)
 
     # @user.command(name="perms", aliases=["permissions"])
     # async def perms(self, ctx)

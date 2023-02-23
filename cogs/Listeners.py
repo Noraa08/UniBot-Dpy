@@ -3,8 +3,8 @@ from discord.ext import commands
 from datetime import datetime
 from termcolor import colored
 from typing import Literal
-from main import util, db
-# from util import langs
+from main import util, db, langs_cache
+from util import Locales
 import discord
 
 #langs = langs.Langs()
@@ -24,7 +24,8 @@ class Listeners(commands.Cog):
         util.color = 0x202126
         util.footer = "© Uni"
         util.footer_icon = "https://media.discordapp.net/attachments/1041171337978335332/1057178574047686657/Picsart_22-12-27_03-10-01-878.jpg"
-        #await langs.fetch(self.bot)
+        Locales.fetch_langs(self.bot)
+        print(langs_cache)
         await self.bot.tree.sync()
     
     @commands.Cog.listener()
@@ -42,16 +43,12 @@ class Listeners(commands.Cog):
         elif isinstance(error, commands.MemberNotFound):
             return await util.throw_error(ctx, "user_not_found")
         elif isinstance(error, commands.UserNotFound):
-            return await util.throw_error(ctx, "user_not_found")
+            return await util.throw_error(ctx, "user_not_found", errors=True)
+        elif isinstance(error, commands.MissingRequiredArgument):
+            ctx.arg = error.param.name
+            return await util.throw_error(ctx, "arg_not_found", error=True)
         elif isinstance(error, commands.NotOwner):
-            return await util.throw_error(
-                ctx,
-                es=f"**{ctx.author.name}**, **no** eres desarrollador de Uni",
-                en=f"**{ctx.author.name}**, you **don't** are a developer of Uni",
-                pt=f"**{ctx.author.name}**, você **não** é um desenvolvedor do Uni",
-                fr=f"**{ctx.author.name}**, vous **n'êtes pas** un développeur d'Uni",
-                bold=False,
-            )
+            return await util.throw_error(ctx, "not_owner", errors=True)
         elif isinstance(error, commands.MissingPermissions):
             return await util.throw_error(
                 ctx,

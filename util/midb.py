@@ -47,6 +47,10 @@ class Database:
         content = self.load_table(table) or {}
         return _.get(content, key)
 
+    def append(self, key: str, value: any, table: str = "Main"):
+        if not self._validate_table(table):
+            raise SyntaxError("MIDB: Invalid table provided.")
+        
     def delete(self, key: str, table: str = "Main"):
         """
         Delete a key value from the database
