@@ -1,14 +1,27 @@
 {
     "es": {
-        "embed_title": "Avatar del usuario" 
+        "embed_title": "Avatar del usuario",
+        "menu_placeholder": "Selecciona a un usuario",
+        "button_link": "Ver en el navegador"
     },
     "en": {
-        "embed_title": "User avatar"
+        "embed_title": "User avatar",
+        "menu_placeholder": "Select a user",
+        "button_link": "View in browser"
     },
     "pt": {
-         "embed_title": "Avatar do usuário" 
+        "embed_title": "Avatar do usuário",
+        "menu_placeholder": "Selecione um usuário",
+        "button_link": "Visualizar no navegador"
     },
     "fr": {
-        "embed_title": "Avatar de l\'utilisateur"
+        "embed_title": "Avatar de l'utilisateur",
+        "menu_placeholder": "Sélectionnez un utilisateur",
+        "button_link": "Afficher dans le navigateur"
+    },
+    "ru": {
+        "embed_title": "Аватар пользователя",
+        "menu_placeholder": "Выберите пользователя", 
+        "button_link": "Просмотреть в браузере"
     }
 }
