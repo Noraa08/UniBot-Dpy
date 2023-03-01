@@ -1,17 +1,17 @@
 {
     "es": {
-        "fine_message": ""
+        "fine_message": "El prefijo `@prefix` fue añadido con succeso al servidor!"
     },
     "en": {
-        "fine_message": ""
+        "fine_message": "The `@prefix` prefix was successfully added to the server!"
     },
     "pt": {
-        "fine_message": ""
+        "fine_message": "O prefixo `@prefix` foi adicionado com sucesso ao servidor!"
     },
     "fr": {
-        "fine_message": ""
+        "fine_message": "Le préfixe `@prefix` a été ajouté avec succès au serveur !"
     },
     "ru": {
-        "fine_message": ""
+        "fine_message": "Префикс `@prefix` успешно добавлен на сервер!"
     }
 }
