@@ -1,17 +1,27 @@
 {
     "es": {
-        "fine_message": "El prefijo `@prefix` fue añadido con succeso al servidor!"
+        "fine_message": "El prefijo `@prefix` fue añadido con succeso al servidor!",
+        "prefix_length": "El prefijo introducido llego al limite de `5` carácteres!",
+        "prefix_exists": "El prefijo `@prefix` ya existe en el servidor"
     },
     "en": {
-        "fine_message": "The `@prefix` prefix was successfully added to the server!"
+        "fine_message": "The `@prefix` prefix was successfully added to the server!",
+        "prefix_length": "The entered prefix has reached the limit of `5` characters!",
+        "prefix_exists": "The prefix `@prefix` already exists on the server"
     },
     "pt": {
-        "fine_message": "O prefixo `@prefix` foi adicionado com sucesso ao servidor!"
+        "fine_message": "O prefixo `@prefix` foi adicionado com sucesso ao servidor!",
+        "prefix_length": "O prefixo inserido atingiu o limite de `5` caracteres!",
+        "prefix_exists": "O prefixo `@prefix` já existe no servidor"
     },
     "fr": {
-        "fine_message": "Le préfixe `@prefix` a été ajouté avec succès au serveur !"
+        "fine_message": "Le préfixe `@prefix` a été ajouté avec succès au serveur !",
+        "prefix_length": "Le préfixe saisi a atteint la limite de `5` caractères !",
+        "prefix_exists": "Le préfixe `@prefix` existe déjà sur le serveur"
     },
     "ru": {
-        "fine_message": "Префикс `@prefix` успешно добавлен на сервер!"
+        "fine_message": "Префикс `@prefix` успешно добавлен на сервер!",
+        "prefix_length": "Введенный префикс достиг предела в 5 символов!",
+        "prefix_exists": "Префикс `@prefix` уже существует на сервере"
     }
 }
