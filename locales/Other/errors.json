@@ -1,0 +1,14 @@
+{
+    "es": {
+        "user_not_found": "El usuario no fue encontrado o es inválido!"
+     },
+    "en": {
+        "user_not_found": "The User was not found or is invalid!"
+    },
+    "pt": {
+        "user_not_found": "O usuário não foi encontrado ou é inválido!"
+    },
+    "fr": {
+        "user_not_found": "Le Utilisateur n'a pas été trouvé ou n'est pas valide!"
+    }
+}
