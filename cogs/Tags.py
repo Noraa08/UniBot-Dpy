@@ -1,12 +1,11 @@
 import discord, datetime, contextlib, io, re, random, json
 from traceback import format_exception
 from discord.ext import commands
-from main import db, util, cmds, interpreter, _
-from util import ext, views
+from util import Middleware, Views
 from difflib import get_close_matches
 from typing_extensions import Annotated
     
-class TagPaginator(views.BaseButtonPaginator): 
+class TagPaginator(Views.BaseButtonPaginator): 
     async def format_page(self, entries, ctx: discord.Interaction):
         embed = discord.Embed(title='All Tags', color=0x303136)
         rows = []
@@ -160,7 +159,7 @@ class Tags(commands.Cog):
         if not tag:
             await util.throw_error(ctx, "tag_not_found")
         else:
-            view = views.Confirmation(ctx)
+            view = Views.Confirmation(ctx)
             ctx.name = name
             view.message = await ctx.send(f'_ _ {util.locale(ctx, "confirm_message")}', view=view)
             await view.wait()

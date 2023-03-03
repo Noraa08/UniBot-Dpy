@@ -1,14 +1,15 @@
 import discord, datetime, contextlib, io, re
 from traceback import format_exception
 from discord.ext import commands
-from main import db, util, cmds
-from util import ext, views
-from cogs.Util import Util
+from util import Views
+from cogs.utils.helpers import Helpers
 
-class Info(commands.Cog):
+class Information(commands.Cog):
     def __init__(self, bot: commands.Bot) -> None:
         self.bot = bot
-
+        self.config = bot.config
+        self.util = bot.util
+        
     @commands.hybrid_group(name="user")
     async def user(self, ctx: commands.Context, user: discord.Member = None) -> None:
        await self.info(ctx, user)
@@ -19,17 +20,17 @@ class Info(commands.Cog):
             user = ctx.author
         guild = self.bot.get_guild(ctx.guild.id)
         embed = discord.Embed(
-            title=util.locale(ctx, "embed_title", cmd="info"),
-            color=await util.image_color(user.display_avatar.url)
+            title=Locales.get(ctx, "embed_title", cmd="info"),
+            color=await bot.util.image_color(user.display_avatar.url) or self.config.Colors.DARK.value
         )
         embed.set_footer(text=f"{util.footer}", icon_url=util.footer_icon)
         embed.set_author(name=f"{user}", icon_url=user.display_avatar.url, url=f"https://discord.com/users/{user.id}")
-        desc = util.locale(ctx, "embed_description", cmd="info")
+        desc = await Locales.get(ctx, "embed_description", cmd="info")
         desc = desc.replace("{user_nick}", f"{util.locale(ctx, 'nickname', cmd='info')} {user.nick}" if user.nick else "").replace("{user_name}", f"{user}").replace("{user_id}", f"`{user.id}`").replace("{user_color}", f"`{str(user.color).replace('#0000000', '#95a5a6')}`")
         embed.description = desc
         embed.set_thumbnail(url=user.display_avatar)
         embed.add_field(
-            name=util.locale(ctx, "embed_field_created", cmd="info"),
+            name=await Locales.get(ctx, "embed_field_created", cmd="info"),
             value=f"_ _ <t:{round(user.created_at.timestamp())}>"
         )
         if guild.get_member(user.id):
@@ -54,17 +55,19 @@ class Info(commands.Cog):
             await i.response.edit_message(embed=embed)
         ctx.config = self.bot.config
         ctx.util = util
-        view = views.UserMenu(ctx, self.bot.config, util)
+        view = Views.UserMenu(ctx, self.bot.config, util)
         view.children[0].placeholder = util.locale(ctx, "user_select_menu", type="Interactions")
         view.do_something = run
         view.message = await ctx.send(embed=embed, view=view)
         
     @user.command(name="avatar", aliases=["av", "pfp"])
     async def avatar(self, ctx: commands.Context, user: discord.User = None) -> None:
-        await cmds.Avatar(ctx, user)
+        await Helpers(self.bot).avatar(ctx, user)
 
     # @user.command(name="perms", aliases=["permissions"])
     # async def perms(self, ctx)
 
 async def setup(bot: commands.Bot):
-    await bot.add_cog(Info(bot))
+    await bot.add_cog(
+        Information(bot)
+    )

@@ -1,6 +1,12 @@
+import os, json
 
-postgresql = 
+token = os.getenv("DISCORD_TOKEN")
+prefix = "?"
+postgresql = json.loads(os.getenv("SQL_CONNECTION"))
 
+footer = "© UniBot - 2023"
+footer_icon = "https://media.discordapp.net/attachments/1041171337978335332/1057178574047686657/Picsart_22-12-27_03-10-01-878.jpg"
+        
 error_emojis = [
     "<:c_nub:1072542050148421703>", 
     "<:c_knife:1072541966321066004>", 

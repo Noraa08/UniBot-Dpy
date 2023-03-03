@@ -1,0 +1,549 @@
+[2023-03-03 06:43:48] [INFO   ] discord.client: logging in using static token
+[2023-03-03 06:43:59] [INFO   ] discord.client: logging in using static token
+[2023-03-03 06:44:07] [INFO   ] discord.client: logging in using static token
+[2023-03-03 06:44:39] [INFO   ] discord.client: logging in using static token
+[2023-03-03 06:44:46] [INFO   ] discord.client: logging in using static token
+[2023-03-03 06:44:53] [INFO   ] discord.client: logging in using static token
+[2023-03-03 06:45:03] [INFO   ] discord.client: logging in using static token
+[2023-03-03 06:45:10] [INFO   ] discord.client: logging in using static token
+[2023-03-03 06:45:18] [INFO   ] discord.client: logging in using static token
+[2023-03-03 06:46:32] [INFO   ] discord.client: logging in using static token
+[2023-03-03 06:47:11] [INFO   ] discord.client: logging in using static token
+[2023-03-03 06:48:13] [INFO   ] discord.client: logging in using static token
+[2023-03-03 06:48:16] [INFO   ] discord.gateway: Shard ID 0 has connected to Gateway (Session ID: e13a62cffb326ee6f14a9edeac619988).
+[2023-03-03 06:48:18] [INFO   ] bot: Ready: Uni ✨#4378 (ID: 924198727533600798)
+[2023-03-03 06:48:18] [ERROR  ] discord.client: Ignoring exception in on_ready
+Traceback (most recent call last):
+  File "/home/runner/Uni-Python-Bot/venv/lib/python3.8/site-packages/discord/client.py", line 409, in _run_event
+    await coro(*args, **kwargs)
+  File "/home/runner/Uni-Python-Bot/cogs/Listeners.py", line 20, in on_ready
+    util.uptime = datetime.now()
+NameError: name 'util' is not defined
+[2023-03-03 06:48:54] [INFO   ] discord.client: logging in using static token
+[2023-03-03 06:48:56] [INFO   ] discord.gateway: Shard ID 0 has connected to Gateway (Session ID: cb379f1127e7035627696482fa34cf85).
+[2023-03-03 06:48:58] [INFO   ] bot: Ready: Uni ✨#4378 (ID: 924198727533600798)
+[2023-03-03 06:49:56] [ERROR  ] discord.client: Ignoring exception in on_message
+Traceback (most recent call last):
+  File "/home/runner/Uni-Python-Bot/venv/lib/python3.8/site-packages/discord/client.py", line 409, in _run_event
+    await coro(*args, **kwargs)
+  File "/home/runner/Uni-Python-Bot/cogs/Listeners.py", line 52, in on_message
+    prefix = db.get(f"{message.guild.id}.prefix", "Guilds") or "?"
+NameError: name 'db' is not defined
+[2023-03-03 06:51:56] [ERROR  ] discord.client: Ignoring exception in on_message
+Traceback (most recent call last):
+  File "/home/runner/Uni-Python-Bot/venv/lib/python3.8/site-packages/discord/client.py", line 409, in _run_event
+    await coro(*args, **kwargs)
+  File "/home/runner/Uni-Python-Bot/cogs/Listeners.py", line 52, in on_message
+    """
+NameError: name 'db' is not defined
+[2023-03-03 06:51:56] [ERROR  ] discord.client: Ignoring exception in on_command_error
+Traceback (most recent call last):
+  File "/home/runner/Uni-Python-Bot/venv/lib/python3.8/site-packages/discord/client.py", line 409, in _run_event
+    await coro(*args, **kwargs)
+  File "/home/runner/Uni-Python-Bot/cogs/Listeners.py", line 36, in on_command_error
+    return await util.throw_error(ctx, "arg_not_found", error=True)
+NameError: name 'util' is not defined
+[2023-03-03 06:52:27] [ERROR  ] discord.client: Ignoring exception in on_message
+Traceback (most recent call last):
+  File "/home/runner/Uni-Python-Bot/venv/lib/python3.8/site-packages/discord/client.py", line 409, in _run_event
+    await coro(*args, **kwargs)
+  File "/home/runner/Uni-Python-Bot/cogs/Listeners.py", line 52, in on_message
+    """
+NameError: name 'db' is not defined
+[2023-03-03 06:52:28] [ERROR  ] discord.client: Ignoring exception in on_command_error
+Traceback (most recent call last):
+  File "/home/runner/Uni-Python-Bot/venv/lib/python3.8/site-packages/discord/ext/commands/core.py", line 229, in wrapped
+    ret = await coro(*args, **kwargs)
+  File "/home/runner/Uni-Python-Bot/cogs/Configuration.py", line 18, in prefix
+    embed = self.bot.util.Embed(ctx,
+AttributeError: 'Util' object has no attribute 'Embed'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/runner/Uni-Python-Bot/venv/lib/python3.8/site-packages/discord/client.py", line 409, in _run_event
+    await coro(*args, **kwargs)
+  File "/home/runner/Uni-Python-Bot/cogs/Listeners.py", line 48, in on_command_error
+    raise error
+  File "/home/runner/Uni-Python-Bot/venv/lib/python3.8/site-packages/discord/ext/commands/bot.py", line 1349, in invoke
+    await ctx.command.invoke(ctx)
+  File "/home/runner/Uni-Python-Bot/venv/lib/python3.8/site-packages/discord/ext/commands/core.py", line 1647, in invoke
+    await super().invoke(ctx)
+  File "/home/runner/Uni-Python-Bot/venv/lib/python3.8/site-packages/discord/ext/commands/core.py", line 1023, in invoke
+    await injected(*ctx.args, **ctx.kwargs)  # type: ignore
+  File "/home/runner/Uni-Python-Bot/venv/lib/python3.8/site-packages/discord/ext/commands/core.py", line 238, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: AttributeError: 'Util' object has no attribute 'Embed'
+[2023-03-03 06:53:34] [ERROR  ] discord.client: Ignoring exception in on_message
+Traceback (most recent call last):
+  File "/home/runner/Uni-Python-Bot/venv/lib/python3.8/site-packages/discord/client.py", line 409, in _run_event
+    await coro(*args, **kwargs)
+  File "/home/runner/Uni-Python-Bot/cogs/Listeners.py", line 52, in on_message
+    """
+NameError: name 'db' is not defined
+[2023-03-03 06:55:18] [INFO   ] discord.client: logging in using static token
+[2023-03-03 06:55:19] [INFO   ] discord.gateway: Shard ID 0 has connected to Gateway (Session ID: 7c988e64a943081e7d9407214b82ccc9).
+[2023-03-03 06:55:22] [INFO   ] bot: Ready: Uni ✨#4378 (ID: 924198727533600798)
+[2023-03-03 06:55:35] [ERROR  ] discord.client: Ignoring exception in on_command_error
+Traceback (most recent call last):
+  File "/home/runner/Uni-Python-Bot/venv/lib/python3.8/site-packages/discord/ext/commands/core.py", line 229, in wrapped
+    ret = await coro(*args, **kwargs)
+  File "/home/runner/Uni-Python-Bot/cogs/Configuration.py", line 18, in prefix
+    embed = self.bot.util.Embed(ctx,
+AttributeError: 'Util' object has no attribute 'Embed'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/runner/Uni-Python-Bot/venv/lib/python3.8/site-packages/discord/client.py", line 409, in _run_event
+    await coro(*args, **kwargs)
+  File "/home/runner/Uni-Python-Bot/cogs/Listeners.py", line 48, in on_command_error
+    raise error
+  File "/home/runner/Uni-Python-Bot/venv/lib/python3.8/site-packages/discord/ext/commands/bot.py", line 1349, in invoke
+    await ctx.command.invoke(ctx)
+  File "/home/runner/Uni-Python-Bot/venv/lib/python3.8/site-packages/discord/ext/commands/core.py", line 1647, in invoke
+    await super().invoke(ctx)
+  File "/home/runner/Uni-Python-Bot/venv/lib/python3.8/site-packages/discord/ext/commands/core.py", line 1023, in invoke
+    await injected(*ctx.args, **ctx.kwargs)  # type: ignore
+  File "/home/runner/Uni-Python-Bot/venv/lib/python3.8/site-packages/discord/ext/commands/core.py", line 238, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: AttributeError: 'Util' object has no attribute 'Embed'
+[2023-03-03 06:59:34] [INFO   ] discord.client: logging in using static token
+[2023-03-03 06:59:39] [INFO   ] discord.gateway: Shard ID 0 has connected to Gateway (Session ID: 189207bab0a42326993fc7ba985567a2).
+[2023-03-03 06:59:42] [INFO   ] bot: Ready: Uni ✨#4378 (ID: 924198727533600798)
+[2023-03-03 07:00:07] [INFO   ] discord.client: logging in using static token
+[2023-03-03 07:00:10] [INFO   ] discord.gateway: Shard ID 0 has connected to Gateway (Session ID: 59ab415224d2b22ac3291071c6b6652d).
+[2023-03-03 07:00:13] [INFO   ] bot: Ready: Uni ✨#4378 (ID: 924198727533600798)
+[2023-03-03 07:00:31] [ERROR  ] discord.client: Ignoring exception in on_command_error
+Traceback (most recent call last):
+  File "/home/runner/Uni-Python-Bot/venv/lib/python3.8/site-packages/discord/ext/commands/core.py", line 229, in wrapped
+    ret = await coro(*args, **kwargs)
+  File "/home/runner/Uni-Python-Bot/cogs/Configuration.py", line 18, in prefix
+    embed = self.bot.util.Embed(ctx,
+AttributeError: 'Util' object has no attribute 'Embed'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/runner/Uni-Python-Bot/venv/lib/python3.8/site-packages/discord/client.py", line 409, in _run_event
+    await coro(*args, **kwargs)
+  File "/home/runner/Uni-Python-Bot/cogs/Listeners.py", line 48, in on_command_error
+    raise error
+  File "/home/runner/Uni-Python-Bot/venv/lib/python3.8/site-packages/discord/ext/commands/bot.py", line 1349, in invoke
+    await ctx.command.invoke(ctx)
+  File "/home/runner/Uni-Python-Bot/venv/lib/python3.8/site-packages/discord/ext/commands/core.py", line 1647, in invoke
+    await super().invoke(ctx)
+  File "/home/runner/Uni-Python-Bot/venv/lib/python3.8/site-packages/discord/ext/commands/core.py", line 1023, in invoke
+    await injected(*ctx.args, **ctx.kwargs)  # type: ignore
+  File "/home/runner/Uni-Python-Bot/venv/lib/python3.8/site-packages/discord/ext/commands/core.py", line 238, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: AttributeError: 'Util' object has no attribute 'Embed'
+[2023-03-03 07:01:15] [INFO   ] discord.client: logging in using static token
+[2023-03-03 07:01:24] [INFO   ] discord.gateway: Shard ID 0 has connected to Gateway (Session ID: 3f36b66369cd185670b15be171bec8e2).
+[2023-03-03 07:01:26] [INFO   ] bot: Ready: Uni ✨#4378 (ID: 924198727533600798)
+[2023-03-03 07:01:52] [ERROR  ] discord.client: Ignoring exception in on_command_error
+Traceback (most recent call last):
+  File "/home/runner/Uni-Python-Bot/venv/lib/python3.8/site-packages/discord/ext/commands/core.py", line 229, in wrapped
+    ret = await coro(*args, **kwargs)
+  File "/home/runner/Uni-Python-Bot/cogs/Configuration.py", line 18, in prefix
+    embed = self.bot.util.Embed(ctx,
+TypeError: Embed() takes 1 positional argument but 2 were given
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/runner/Uni-Python-Bot/venv/lib/python3.8/site-packages/discord/client.py", line 409, in _run_event
+    await coro(*args, **kwargs)
+  File "/home/runner/Uni-Python-Bot/cogs/Listeners.py", line 48, in on_command_error
+    raise error
+  File "/home/runner/Uni-Python-Bot/venv/lib/python3.8/site-packages/discord/ext/commands/bot.py", line 1349, in invoke
+    await ctx.command.invoke(ctx)
+  File "/home/runner/Uni-Python-Bot/venv/lib/python3.8/site-packages/discord/ext/commands/core.py", line 1647, in invoke
+    await super().invoke(ctx)
+  File "/home/runner/Uni-Python-Bot/venv/lib/python3.8/site-packages/discord/ext/commands/core.py", line 1023, in invoke
+    await injected(*ctx.args, **ctx.kwargs)  # type: ignore
+  File "/home/runner/Uni-Python-Bot/venv/lib/python3.8/site-packages/discord/ext/commands/core.py", line 238, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: TypeError: Embed() takes 1 positional argument but 2 were given
+[2023-03-03 07:02:15] [INFO   ] discord.client: logging in using static token
+[2023-03-03 07:02:18] [INFO   ] discord.gateway: Shard ID 0 has connected to Gateway (Session ID: dbeb532225d49ae9cb8a4a3a12365c9a).
+[2023-03-03 07:02:20] [INFO   ] bot: Ready: Uni ✨#4378 (ID: 924198727533600798)
+[2023-03-03 07:04:17] [ERROR  ] discord.client: Ignoring exception in on_command_error
+Traceback (most recent call last):
+  File "/home/runner/Uni-Python-Bot/venv/lib/python3.8/site-packages/discord/ext/commands/core.py", line 229, in wrapped
+    ret = await coro(*args, **kwargs)
+  File "/home/runner/Uni-Python-Bot/cogs/Configuration.py", line 18, in prefix
+    embed = self.bot.util.Embed(ctx,
+  File "/home/runner/Uni-Python-Bot/util/Middleware.py", line 27, in Embed
+    kwargs["footer"] = { "text": bot.config.footer, "icon_url": bot.config.footer_icon }
+NameError: name 'bot' is not defined
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/runner/Uni-Python-Bot/venv/lib/python3.8/site-packages/discord/client.py", line 409, in _run_event
+    await coro(*args, **kwargs)
+  File "/home/runner/Uni-Python-Bot/cogs/Listeners.py", line 48, in on_command_error
+    raise error
+  File "/home/runner/Uni-Python-Bot/venv/lib/python3.8/site-packages/discord/ext/commands/bot.py", line 1349, in invoke
+    await ctx.command.invoke(ctx)
+  File "/home/runner/Uni-Python-Bot/venv/lib/python3.8/site-packages/discord/ext/commands/core.py", line 1647, in invoke
+    await super().invoke(ctx)
+  File "/home/runner/Uni-Python-Bot/venv/lib/python3.8/site-packages/discord/ext/commands/core.py", line 1023, in invoke
+    await injected(*ctx.args, **ctx.kwargs)  # type: ignore
+  File "/home/runner/Uni-Python-Bot/venv/lib/python3.8/site-packages/discord/ext/commands/core.py", line 238, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: NameError: name 'bot' is not defined
+[2023-03-03 07:05:17] [INFO   ] discord.client: logging in using static token
+[2023-03-03 07:05:19] [INFO   ] discord.gateway: Shard ID 0 has connected to Gateway (Session ID: aa9350b24e10a24383f286e3848062cf).
+[2023-03-03 07:05:21] [INFO   ] bot: Ready: Uni ✨#4378 (ID: 924198727533600798)
+[2023-03-03 07:07:03] [ERROR  ] discord.client: Ignoring exception in on_command_error
+Traceback (most recent call last):
+  File "/home/runner/Uni-Python-Bot/venv/lib/python3.8/site-packages/discord/ext/commands/core.py", line 229, in wrapped
+    ret = await coro(*args, **kwargs)
+  File "/home/runner/Uni-Python-Bot/cogs/Configuration.py", line 18, in prefix
+    embed = self.bot.util.Embed(ctx,
+  File "/home/runner/Uni-Python-Bot/util/Middleware.py", line 31, in Embed
+    embed = discord.Embed().from_dict(kwargs)
+  File "/home/runner/Uni-Python-Bot/venv/lib/python3.8/site-packages/discord/embeds.py", line 236, in from_dict
+    self._timestamp = utils.parse_time(data['timestamp'])
+  File "/home/runner/Uni-Python-Bot/venv/lib/python3.8/site-packages/discord/utils.py", line 278, in parse_time
+    return datetime.datetime.fromisoformat(timestamp)
+TypeError: fromisoformat: argument must be str
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/runner/Uni-Python-Bot/venv/lib/python3.8/site-packages/discord/client.py", line 409, in _run_event
+    await coro(*args, **kwargs)
+  File "/home/runner/Uni-Python-Bot/cogs/Listeners.py", line 48, in on_command_error
+    raise error
+  File "/home/runner/Uni-Python-Bot/venv/lib/python3.8/site-packages/discord/ext/commands/bot.py", line 1349, in invoke
+    await ctx.command.invoke(ctx)
+  File "/home/runner/Uni-Python-Bot/venv/lib/python3.8/site-packages/discord/ext/commands/core.py", line 1647, in invoke
+    await super().invoke(ctx)
+  File "/home/runner/Uni-Python-Bot/venv/lib/python3.8/site-packages/discord/ext/commands/core.py", line 1023, in invoke
+    await injected(*ctx.args, **ctx.kwargs)  # type: ignore
+  File "/home/runner/Uni-Python-Bot/venv/lib/python3.8/site-packages/discord/ext/commands/core.py", line 238, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: TypeError: fromisoformat: argument must be str
+[2023-03-03 07:10:41] [INFO   ] discord.client: logging in using static token
+[2023-03-03 07:10:43] [INFO   ] discord.gateway: Shard ID 0 has connected to Gateway (Session ID: 275bc03d0ab76036e6aa3ba95fc18ae8).
+[2023-03-03 07:10:46] [INFO   ] bot: Ready: Uni ✨#4378 (ID: 924198727533600798)
+[2023-03-03 07:10:48] [ERROR  ] discord.client: Ignoring exception in on_command_error
+Traceback (most recent call last):
+  File "/home/runner/Uni-Python-Bot/venv/lib/python3.8/site-packages/discord/ext/commands/core.py", line 229, in wrapped
+    ret = await coro(*args, **kwargs)
+  File "/home/runner/Uni-Python-Bot/cogs/Configuration.py", line 18, in prefix
+    embed = self.bot.util.Embed(ctx,
+  File "/home/runner/Uni-Python-Bot/util/Middleware.py", line 31, in Embed
+    embed = discord.Embed().from_dict(kwargs)
+  File "/home/runner/Uni-Python-Bot/venv/lib/python3.8/site-packages/discord/embeds.py", line 236, in from_dict
+    self._timestamp = utils.parse_time(data['timestamp'])
+  File "/home/runner/Uni-Python-Bot/venv/lib/python3.8/site-packages/discord/utils.py", line 278, in parse_time
+    return datetime.datetime.fromisoformat(timestamp)
+TypeError: fromisoformat: argument must be str
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/runner/Uni-Python-Bot/venv/lib/python3.8/site-packages/discord/client.py", line 409, in _run_event
+    await coro(*args, **kwargs)
+  File "/home/runner/Uni-Python-Bot/cogs/Listeners.py", line 48, in on_command_error
+    raise error
+  File "/home/runner/Uni-Python-Bot/venv/lib/python3.8/site-packages/discord/ext/commands/bot.py", line 1349, in invoke
+    await ctx.command.invoke(ctx)
+  File "/home/runner/Uni-Python-Bot/venv/lib/python3.8/site-packages/discord/ext/commands/core.py", line 1647, in invoke
+    await super().invoke(ctx)
+  File "/home/runner/Uni-Python-Bot/venv/lib/python3.8/site-packages/discord/ext/commands/core.py", line 1023, in invoke
+    await injected(*ctx.args, **ctx.kwargs)  # type: ignore
+  File "/home/runner/Uni-Python-Bot/venv/lib/python3.8/site-packages/discord/ext/commands/core.py", line 238, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: TypeError: fromisoformat: argument must be str
+[2023-03-03 07:17:03] [INFO   ] discord.client: logging in using static token
+[2023-03-03 07:17:05] [INFO   ] discord.gateway: Shard ID 0 has connected to Gateway (Session ID: 11bd1bf6b62ed3baf5bacf625557ba10).
+[2023-03-03 07:17:07] [ERROR  ] discord.client: Ignoring exception in on_command_error
+Traceback (most recent call last):
+  File "/home/runner/Uni-Python-Bot/venv/lib/python3.8/site-packages/discord/ext/commands/core.py", line 229, in wrapped
+    ret = await coro(*args, **kwargs)
+  File "/home/runner/Uni-Python-Bot/cogs/Configuration.py", line 18, in prefix
+    embed = self.bot.util.Embed(ctx,
+  File "/home/runner/Uni-Python-Bot/util/Middleware.py", line 31, in Embed
+    embed = discord.Embed().from_dict(kwargs)
+  File "/home/runner/Uni-Python-Bot/venv/lib/python3.8/site-packages/discord/embeds.py", line 236, in from_dict
+    self._timestamp = utils.parse_time(data['timestamp'])
+  File "/home/runner/Uni-Python-Bot/venv/lib/python3.8/site-packages/discord/utils.py", line 278, in parse_time
+    return datetime.datetime.fromisoformat(timestamp)
+TypeError: fromisoformat: argument must be str
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/runner/Uni-Python-Bot/venv/lib/python3.8/site-packages/discord/client.py", line 409, in _run_event
+    await coro(*args, **kwargs)
+  File "/home/runner/Uni-Python-Bot/cogs/Listeners.py", line 48, in on_command_error
+    raise error
+  File "/home/runner/Uni-Python-Bot/venv/lib/python3.8/site-packages/discord/ext/commands/bot.py", line 1349, in invoke
+    await ctx.command.invoke(ctx)
+  File "/home/runner/Uni-Python-Bot/venv/lib/python3.8/site-packages/discord/ext/commands/core.py", line 1647, in invoke
+    await super().invoke(ctx)
+  File "/home/runner/Uni-Python-Bot/venv/lib/python3.8/site-packages/discord/ext/commands/core.py", line 1023, in invoke
+    await injected(*ctx.args, **ctx.kwargs)  # type: ignore
+  File "/home/runner/Uni-Python-Bot/venv/lib/python3.8/site-packages/discord/ext/commands/core.py", line 238, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: TypeError: fromisoformat: argument must be str
+[2023-03-03 07:17:08] [INFO   ] bot: Ready: Uni ✨#4378 (ID: 924198727533600798)
+[2023-03-03 07:21:54] [INFO   ] discord.client: logging in using static token
+[2023-03-03 07:21:56] [INFO   ] discord.gateway: Shard ID 0 has connected to Gateway (Session ID: 925682a3dcd838a48aecf371614c36ec).
+[2023-03-03 07:21:58] [INFO   ] bot: Ready: Uni ✨#4378 (ID: 924198727533600798)
+[2023-03-03 07:30:02] [INFO   ] discord.client: logging in using static token
+[2023-03-03 07:30:03] [INFO   ] discord.gateway: Shard ID 0 has connected to Gateway (Session ID: dd1472c524e3ae671d8ec435ea33bd82).
+[2023-03-03 07:30:05] [INFO   ] bot: Ready: Uni ✨#4378 (ID: 924198727533600798)
+[2023-03-03 07:30:05] [ERROR  ] discord.client: Ignoring exception in on_ready
+Traceback (most recent call last):
+  File "/home/runner/Uni-Python-Bot/venv/lib/python3.8/site-packages/discord/client.py", line 409, in _run_event
+    await coro(*args, **kwargs)
+  File "/home/runner/Uni-Python-Bot/cogs/Listeners.py", line 15, in on_ready
+    Locales.fetch_langs(self.bot)
+  File "/home/runner/Uni-Python-Bot/util/Locales.py", line 20, in fetch_langs
+    for cmd in list(cog.walk_commands):
+TypeError: 'method' object is not iterable
+[2023-03-03 07:40:14] [INFO   ] discord.client: logging in using static token
+[2023-03-03 07:40:57] [INFO   ] discord.client: logging in using static token
+[2023-03-03 07:40:59] [INFO   ] discord.gateway: Shard ID 0 has connected to Gateway (Session ID: 6d1cafe358eedfc0796b3c52eedc4881).
+[2023-03-03 07:41:01] [INFO   ] bot: Ready: Uni ✨#4378 (ID: 924198727533600798)
+[2023-03-03 07:41:01] [ERROR  ] discord.client: Ignoring exception in on_ready
+Traceback (most recent call last):
+  File "/home/runner/Uni-Python-Bot/venv/lib/python3.8/site-packages/discord/client.py", line 409, in _run_event
+    await coro(*args, **kwargs)
+  File "/home/runner/Uni-Python-Bot/cogs/Listeners.py", line 15, in on_ready
+    Locales.fetch_langs(self.bot)
+  File "/home/runner/Uni-Python-Bot/util/Locales.py", line 18, in fetch_langs
+    for cmd in list(cog.walk_commands):
+TypeError: 'method' object is not iterable
+[2023-03-03 07:42:48] [INFO   ] discord.client: logging in using static token
+[2023-03-03 07:42:49] [INFO   ] discord.gateway: Shard ID 0 has connected to Gateway (Session ID: 88b994ae1405768fa8790752c3dc3226).
+[2023-03-03 07:42:52] [INFO   ] bot: Ready: Uni ✨#4378 (ID: 924198727533600798)
+[2023-03-03 07:43:03] [INFO   ] discord.client: logging in using static token
+[2023-03-03 07:43:04] [INFO   ] discord.gateway: Shard ID 0 has connected to Gateway (Session ID: 21bffad735364fc6360f14412b45b05b).
+[2023-03-03 07:43:06] [INFO   ] bot: Ready: Uni ✨#4378 (ID: 924198727533600798)
+[2023-03-03 07:43:42] [ERROR  ] discord.client: Ignoring exception in on_command_error
+Traceback (most recent call last):
+  File "/home/runner/Uni-Python-Bot/venv/lib/python3.8/site-packages/discord/ext/commands/core.py", line 229, in wrapped
+    ret = await coro(*args, **kwargs)
+  File "/home/runner/Uni-Python-Bot/cogs/Configuration.py", line 42, in p_add
+    await Locales.send_fine(ctx, "Configuration", "prefix_add", "fine_message", prefix=prefix)
+AttributeError: module 'util.Locales' has no attribute 'send_fine'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/runner/Uni-Python-Bot/venv/lib/python3.8/site-packages/discord/client.py", line 409, in _run_event
+    await coro(*args, **kwargs)
+  File "/home/runner/Uni-Python-Bot/cogs/Listeners.py", line 48, in on_command_error
+    raise error
+  File "/home/runner/Uni-Python-Bot/venv/lib/python3.8/site-packages/discord/ext/commands/bot.py", line 1349, in invoke
+    await ctx.command.invoke(ctx)
+  File "/home/runner/Uni-Python-Bot/venv/lib/python3.8/site-packages/discord/ext/commands/core.py", line 1642, in invoke
+    await ctx.invoked_subcommand.invoke(ctx)
+  File "/home/runner/Uni-Python-Bot/venv/lib/python3.8/site-packages/discord/ext/commands/core.py", line 1023, in invoke
+    await injected(*ctx.args, **ctx.kwargs)  # type: ignore
+  File "/home/runner/Uni-Python-Bot/venv/lib/python3.8/site-packages/discord/ext/commands/core.py", line 238, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: AttributeError: module 'util.Locales' has no attribute 'send_fine'
+[2023-03-03 07:44:00] [ERROR  ] discord.client: Ignoring exception in on_command_error
+Traceback (most recent call last):
+  File "/home/runner/Uni-Python-Bot/venv/lib/python3.8/site-packages/discord/ext/commands/core.py", line 229, in wrapped
+    ret = await coro(*args, **kwargs)
+  File "/home/runner/Uni-Python-Bot/cogs/Configuration.py", line 36, in p_add
+    return await Locales.send_error(ctx, "Configuration", "prefix_add", "length_limit", prefix=prefix)
+TypeError: send_error() missing 1 required positional argument: 'key'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/runner/Uni-Python-Bot/venv/lib/python3.8/site-packages/discord/client.py", line 409, in _run_event
+    await coro(*args, **kwargs)
+  File "/home/runner/Uni-Python-Bot/cogs/Listeners.py", line 48, in on_command_error
+    raise error
+  File "/home/runner/Uni-Python-Bot/venv/lib/python3.8/site-packages/discord/ext/commands/bot.py", line 1349, in invoke
+    await ctx.command.invoke(ctx)
+  File "/home/runner/Uni-Python-Bot/venv/lib/python3.8/site-packages/discord/ext/commands/core.py", line 1642, in invoke
+    await ctx.invoked_subcommand.invoke(ctx)
+  File "/home/runner/Uni-Python-Bot/venv/lib/python3.8/site-packages/discord/ext/commands/core.py", line 1023, in invoke
+    await injected(*ctx.args, **ctx.kwargs)  # type: ignore
+  File "/home/runner/Uni-Python-Bot/venv/lib/python3.8/site-packages/discord/ext/commands/core.py", line 238, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: TypeError: send_error() missing 1 required positional argument: 'key'
+[2023-03-03 07:45:17] [INFO   ] discord.client: logging in using static token
+[2023-03-03 07:45:19] [INFO   ] discord.gateway: Shard ID 0 has connected to Gateway (Session ID: 8dc3c3d8a19e2bc4e3b24ab3a11d13a2).
+[2023-03-03 07:45:21] [INFO   ] bot: Ready: Uni ✨#4378 (ID: 924198727533600798)
+[2023-03-03 07:45:33] [ERROR  ] discord.client: Ignoring exception in on_command_error
+Traceback (most recent call last):
+  File "/home/runner/Uni-Python-Bot/venv/lib/python3.8/site-packages/discord/ext/commands/core.py", line 229, in wrapped
+    ret = await coro(*args, **kwargs)
+  File "/home/runner/Uni-Python-Bot/cogs/Configuration.py", line 42, in p_add
+    await Locales.send_fine(ctx, "Configuration", "prefix_add", "fine_message", prefix=prefix)
+AttributeError: module 'util.Locales' has no attribute 'send_fine'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/runner/Uni-Python-Bot/venv/lib/python3.8/site-packages/discord/client.py", line 409, in _run_event
+    await coro(*args, **kwargs)
+  File "/home/runner/Uni-Python-Bot/cogs/Listeners.py", line 48, in on_command_error
+    raise error
+  File "/home/runner/Uni-Python-Bot/venv/lib/python3.8/site-packages/discord/ext/commands/bot.py", line 1349, in invoke
+    await ctx.command.invoke(ctx)
+  File "/home/runner/Uni-Python-Bot/venv/lib/python3.8/site-packages/discord/ext/commands/core.py", line 1642, in invoke
+    await ctx.invoked_subcommand.invoke(ctx)
+  File "/home/runner/Uni-Python-Bot/venv/lib/python3.8/site-packages/discord/ext/commands/core.py", line 1023, in invoke
+    await injected(*ctx.args, **ctx.kwargs)  # type: ignore
+  File "/home/runner/Uni-Python-Bot/venv/lib/python3.8/site-packages/discord/ext/commands/core.py", line 238, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: AttributeError: module 'util.Locales' has no attribute 'send_fine'
+[2023-03-03 07:46:06] [INFO   ] discord.client: logging in using static token
+[2023-03-03 07:46:07] [INFO   ] discord.gateway: Shard ID 0 has connected to Gateway (Session ID: 0ddb880fe5409ed42ecd8bd1ff04dea1).
+[2023-03-03 07:46:10] [INFO   ] bot: Ready: Uni ✨#4378 (ID: 924198727533600798)
+[2023-03-03 07:50:30] [INFO   ] discord.client: logging in using static token
+[2023-03-03 07:50:31] [INFO   ] discord.gateway: Shard ID 0 has connected to Gateway (Session ID: fd8f93fcac30a649a48f900a8296041b).
+[2023-03-03 07:50:33] [INFO   ] bot: Ready: Uni ✨#4378 (ID: 924198727533600798)
+[2023-03-03 07:51:32] [ERROR  ] discord.client: Ignoring exception in on_message
+Traceback (most recent call last):
+  File "/home/runner/Uni-Python-Bot/venv/lib/python3.8/site-packages/discord/client.py", line 409, in _run_event
+    await coro(*args, **kwargs)
+  File "/home/runner/Uni-Python-Bot/bot.py", line 186, in on_message
+    await self.process_commands(message)
+  File "/home/runner/Uni-Python-Bot/bot.py", line 156, in process_commands
+    ctx = await self.get_context(message)
+  File "/home/runner/Uni-Python-Bot/bot.py", line 153, in get_context
+    return await super().get_context(origin, cls=cls)
+  File "/home/runner/Uni-Python-Bot/venv/lib/python3.8/site-packages/discord/ext/commands/bot.py", line 1288, in get_context
+    prefix = await self.get_prefix(origin)
+  File "/home/runner/Uni-Python-Bot/venv/lib/python3.8/site-packages/discord/ext/commands/bot.py", line 1195, in get_prefix
+    ret = await discord.utils.maybe_coroutine(prefix, self, message)  # type: ignore
+  File "/home/runner/Uni-Python-Bot/venv/lib/python3.8/site-packages/discord/utils.py", line 662, in maybe_coroutine
+    return await value
+  File "/home/runner/Uni-Python-Bot/bot.py", line 38, in _prefix
+    message.guild.id, [config.prefix], "en"
+AttributeError: module 'config' has no attribute 'prefix'
+[2023-03-03 07:52:01] [ERROR  ] discord.client: Ignoring exception in on_message
+Traceback (most recent call last):
+  File "/home/runner/Uni-Python-Bot/venv/lib/python3.8/site-packages/discord/client.py", line 409, in _run_event
+    await coro(*args, **kwargs)
+  File "/home/runner/Uni-Python-Bot/bot.py", line 186, in on_message
+    await self.process_commands(message)
+  File "/home/runner/Uni-Python-Bot/bot.py", line 156, in process_commands
+    ctx = await self.get_context(message)
+  File "/home/runner/Uni-Python-Bot/bot.py", line 153, in get_context
+    return await super().get_context(origin, cls=cls)
+  File "/home/runner/Uni-Python-Bot/venv/lib/python3.8/site-packages/discord/ext/commands/bot.py", line 1288, in get_context
+    prefix = await self.get_prefix(origin)
+  File "/home/runner/Uni-Python-Bot/venv/lib/python3.8/site-packages/discord/ext/commands/bot.py", line 1195, in get_prefix
+    ret = await discord.utils.maybe_coroutine(prefix, self, message)  # type: ignore
+  File "/home/runner/Uni-Python-Bot/venv/lib/python3.8/site-packages/discord/utils.py", line 662, in maybe_coroutine
+    return await value
+  File "/home/runner/Uni-Python-Bot/bot.py", line 38, in _prefix
+    message.guild.id, [config.prefix], "en"
+AttributeError: module 'config' has no attribute 'prefix'
+[2023-03-03 07:53:28] [INFO   ] discord.client: logging in using static token
+[2023-03-03 07:53:29] [INFO   ] discord.gateway: Shard ID 0 has connected to Gateway (Session ID: ba21e1d334a0ba461efca0fc3f90ffe4).
+[2023-03-03 07:53:31] [INFO   ] bot: Ready: Uni ✨#4378 (ID: 924198727533600798)
+[2023-03-03 07:55:47] [INFO   ] discord.client: logging in using static token
+[2023-03-03 07:55:49] [INFO   ] discord.gateway: Shard ID 0 has connected to Gateway (Session ID: a7b8d23c985ebd346057f7a13e62825d).
+[2023-03-03 07:55:51] [INFO   ] bot: Ready: Uni ✨#4378 (ID: 924198727533600798)
+[2023-03-03 08:00:38] [INFO   ] discord.client: logging in using static token
+[2023-03-03 08:00:41] [INFO   ] discord.gateway: Shard ID 0 has connected to Gateway (Session ID: b8e18218f5760a37dff489c356702150).
+[2023-03-03 08:00:43] [INFO   ] bot: Ready: Uni ✨#4378 (ID: 924198727533600798)
+[2023-03-03 08:04:26] [INFO   ] discord.client: logging in using static token
+[2023-03-03 08:04:27] [INFO   ] discord.gateway: Shard ID 0 has connected to Gateway (Session ID: b8ba223feeab3fec218aaeb28ebf04a7).
+[2023-03-03 08:04:29] [INFO   ] bot: Ready: Uni ✨#4378 (ID: 924198727533600798)
+[2023-03-03 08:05:36] [INFO   ] discord.client: logging in using static token
+[2023-03-03 08:05:37] [INFO   ] discord.gateway: Shard ID 0 has connected to Gateway (Session ID: 64e9497b129c857fdd4b67d9000e52d7).
+[2023-03-03 08:05:39] [INFO   ] bot: Ready: Uni ✨#4378 (ID: 924198727533600798)
+[2023-03-03 08:05:55] [ERROR  ] discord.client: Ignoring exception in on_command_error
+Traceback (most recent call last):
+  File "/home/runner/Uni-Python-Bot/venv/lib/python3.8/site-packages/discord/ext/commands/core.py", line 229, in wrapped
+    ret = await coro(*args, **kwargs)
+  File "/home/runner/Uni-Python-Bot/cogs/Configuration.py", line 36, in p_add
+    return await Locales.send(ctx, "Configuration", "prefix_add", "length_limit", like="error", prefix=prefix)
+TypeError: send() got multiple values for argument 'like'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/runner/Uni-Python-Bot/venv/lib/python3.8/site-packages/discord/client.py", line 409, in _run_event
+    await coro(*args, **kwargs)
+  File "/home/runner/Uni-Python-Bot/cogs/Listeners.py", line 48, in on_command_error
+    raise error
+  File "/home/runner/Uni-Python-Bot/venv/lib/python3.8/site-packages/discord/ext/commands/bot.py", line 1349, in invoke
+    await ctx.command.invoke(ctx)
+  File "/home/runner/Uni-Python-Bot/venv/lib/python3.8/site-packages/discord/ext/commands/core.py", line 1642, in invoke
+    await ctx.invoked_subcommand.invoke(ctx)
+  File "/home/runner/Uni-Python-Bot/venv/lib/python3.8/site-packages/discord/ext/commands/core.py", line 1023, in invoke
+    await injected(*ctx.args, **ctx.kwargs)  # type: ignore
+  File "/home/runner/Uni-Python-Bot/venv/lib/python3.8/site-packages/discord/ext/commands/core.py", line 238, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: TypeError: send() got multiple values for argument 'like'
+[2023-03-03 08:06:42] [INFO   ] discord.client: logging in using static token
+[2023-03-03 08:06:44] [INFO   ] discord.gateway: Shard ID 0 has connected to Gateway (Session ID: cc75be209cc625ee90e05a96f70923b0).
+[2023-03-03 08:06:46] [INFO   ] bot: Ready: Uni ✨#4378 (ID: 924198727533600798)
+[2023-03-03 08:06:55] [ERROR  ] discord.client: Ignoring exception in on_command_error
+Traceback (most recent call last):
+  File "/home/runner/Uni-Python-Bot/venv/lib/python3.8/site-packages/discord/ext/commands/core.py", line 229, in wrapped
+    ret = await coro(*args, **kwargs)
+  File "/home/runner/Uni-Python-Bot/cogs/Configuration.py", line 36, in p_add
+    return await Locales.send(ctx, "Configuration", "prefix_add", "length_limit", like="error", prefix=prefix)
+TypeError: send() takes 3 positional arguments but 4 positional arguments (and 1 keyword-only argument) were given
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/runner/Uni-Python-Bot/venv/lib/python3.8/site-packages/discord/client.py", line 409, in _run_event
+    await coro(*args, **kwargs)
+  File "/home/runner/Uni-Python-Bot/cogs/Listeners.py", line 48, in on_command_error
+    raise error
+  File "/home/runner/Uni-Python-Bot/venv/lib/python3.8/site-packages/discord/ext/commands/bot.py", line 1349, in invoke
+    await ctx.command.invoke(ctx)
+  File "/home/runner/Uni-Python-Bot/venv/lib/python3.8/site-packages/discord/ext/commands/core.py", line 1642, in invoke
+    await ctx.invoked_subcommand.invoke(ctx)
+  File "/home/runner/Uni-Python-Bot/venv/lib/python3.8/site-packages/discord/ext/commands/core.py", line 1023, in invoke
+    await injected(*ctx.args, **ctx.kwargs)  # type: ignore
+  File "/home/runner/Uni-Python-Bot/venv/lib/python3.8/site-packages/discord/ext/commands/core.py", line 238, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: TypeError: send() takes 3 positional arguments but 4 positional arguments (and 1 keyword-only argument) were given
+[2023-03-03 08:06:56] [ERROR  ] discord.client: Ignoring exception in on_command_error
+Traceback (most recent call last):
+  File "/home/runner/Uni-Python-Bot/venv/lib/python3.8/site-packages/discord/ext/commands/core.py", line 229, in wrapped
+    ret = await coro(*args, **kwargs)
+  File "/home/runner/Uni-Python-Bot/cogs/Configuration.py", line 36, in p_add
+    return await Locales.send(ctx, "Configuration", "prefix_add", "length_limit", like="error", prefix=prefix)
+TypeError: send() takes 3 positional arguments but 4 positional arguments (and 1 keyword-only argument) were given
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/runner/Uni-Python-Bot/venv/lib/python3.8/site-packages/discord/client.py", line 409, in _run_event
+    await coro(*args, **kwargs)
+  File "/home/runner/Uni-Python-Bot/cogs/Listeners.py", line 48, in on_command_error
+    raise error
+  File "/home/runner/Uni-Python-Bot/venv/lib/python3.8/site-packages/discord/ext/commands/bot.py", line 1349, in invoke
+    await ctx.command.invoke(ctx)
+  File "/home/runner/Uni-Python-Bot/venv/lib/python3.8/site-packages/discord/ext/commands/core.py", line 1642, in invoke
+    await ctx.invoked_subcommand.invoke(ctx)
+  File "/home/runner/Uni-Python-Bot/venv/lib/python3.8/site-packages/discord/ext/commands/core.py", line 1023, in invoke
+    await injected(*ctx.args, **ctx.kwargs)  # type: ignore
+  File "/home/runner/Uni-Python-Bot/venv/lib/python3.8/site-packages/discord/ext/commands/core.py", line 238, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: TypeError: send() takes 3 positional arguments but 4 positional arguments (and 1 keyword-only argument) were given
+[2023-03-03 08:07:22] [INFO   ] discord.client: logging in using static token
+[2023-03-03 08:07:31] [INFO   ] discord.client: logging in using static token
+[2023-03-03 08:08:34] [INFO   ] discord.client: logging in using static token
+[2023-03-03 08:08:36] [INFO   ] discord.gateway: Shard ID 0 has connected to Gateway (Session ID: 4f8a01b7dc8792d9cdcfc7388fe8c400).
+[2023-03-03 08:08:38] [INFO   ] bot: Ready: Uni ✨#4378 (ID: 924198727533600798)
+[2023-03-03 08:10:44] [INFO   ] discord.client: logging in using static token
+[2023-03-03 08:10:45] [INFO   ] discord.gateway: Shard ID 0 has connected to Gateway (Session ID: 66e30b7df6bec55320c9c76105587c3d).
+[2023-03-03 08:10:47] [INFO   ] bot: Ready: Uni ✨#4378 (ID: 924198727533600798)
+[2023-03-03 15:40:46] [INFO   ] discord.client: logging in using static token
+[2023-03-03 15:40:50] [INFO   ] discord.gateway: Shard ID 0 has connected to Gateway (Session ID: b90790f878d10c907a263b74567ec64c).
+[2023-03-03 15:40:52] [INFO   ] bot: Ready: Uni ✨#4378 (ID: 924198727533600798)

@@ -1,9 +1,4 @@
-import (
-    json,
-    os,
-    uuid,
-    asyncio
-)
+import json, os, uuid, asyncio
 from typing import Any, Callable, Dict, Generic, Optional, Type, TypeVar, Union, overload
 
 _T = TypeVar('_T')
