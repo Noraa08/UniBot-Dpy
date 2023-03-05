@@ -547,3 +547,256 @@ discord.ext.commands.errors.CommandInvokeError: Command raised an exception: Typ
 [2023-03-03 15:40:46] [INFO   ] discord.client: logging in using static token
 [2023-03-03 15:40:50] [INFO   ] discord.gateway: Shard ID 0 has connected to Gateway (Session ID: b90790f878d10c907a263b74567ec64c).
 [2023-03-03 15:40:52] [INFO   ] bot: Ready: Uni ✨#4378 (ID: 924198727533600798)
+[2023-03-03 16:41:09] [INFO   ] discord.client: logging in using static token
+[2023-03-03 16:41:13] [INFO   ] discord.gateway: Shard ID 0 has connected to Gateway (Session ID: eaac98a96c3a6c7324d9323bf49768b0).
+[2023-03-03 16:41:15] [INFO   ] bot: Ready: Uni ✨#4378 (ID: 924198727533600798)
+[2023-03-03 17:28:04] [INFO   ] discord.client: logging in using static token
+[2023-03-03 17:28:08] [INFO   ] discord.gateway: Shard ID 0 has connected to Gateway (Session ID: 35edb6b5639c61e7a08fc48d2325de8c).
+[2023-03-03 17:28:10] [INFO   ] bot: Ready: Uni ✨#4378 (ID: 924198727533600798)
+[2023-03-03 18:09:27] [INFO   ] discord.client: logging in using static token
+[2023-03-03 18:09:30] [INFO   ] discord.gateway: Shard ID 0 has connected to Gateway (Session ID: 9557a916595d6bddced2cf94ce27f2d9).
+[2023-03-03 18:09:33] [INFO   ] bot: Ready: Uni ✨#4378 (ID: 924198727533600798)
+[2023-03-03 18:54:44] [INFO   ] discord.client: logging in using static token
+[2023-03-03 18:54:47] [INFO   ] discord.gateway: Shard ID 0 has connected to Gateway (Session ID: 9b65ed3cfee816dac895bcabbf0d1b65).
+[2023-03-03 18:54:50] [INFO   ] bot: Ready: Uni ✨#4378 (ID: 924198727533600798)
+[2023-03-03 18:55:26] [ERROR  ] discord.client: Ignoring exception in on_command_error
+Traceback (most recent call last):
+  File "/home/runner/Uni-Python-Bot/venv/lib/python3.8/site-packages/discord/ext/commands/core.py", line 229, in wrapped
+    ret = await coro(*args, **kwargs)
+  File "/home/runner/Uni-Python-Bot/cogs/Information.py", line 15, in user
+    await self.info(ctx, user)
+  File "/home/runner/Uni-Python-Bot/venv/lib/python3.8/site-packages/discord/ext/commands/core.py", line 582, in __call__
+    return await self.callback(self.cog, context, *args, **kwargs)  # type: ignore
+  File "/home/runner/Uni-Python-Bot/cogs/Information.py", line 23, in info
+    title=Locales.get(ctx, "embed_title", cmd="info"),
+NameError: name 'Locales' is not defined
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/runner/Uni-Python-Bot/venv/lib/python3.8/site-packages/discord/client.py", line 409, in _run_event
+    await coro(*args, **kwargs)
+  File "/home/runner/Uni-Python-Bot/cogs/Listeners.py", line 40, in on_command_error
+    raise error
+  File "/home/runner/Uni-Python-Bot/venv/lib/python3.8/site-packages/discord/ext/commands/bot.py", line 1349, in invoke
+    await ctx.command.invoke(ctx)
+  File "/home/runner/Uni-Python-Bot/venv/lib/python3.8/site-packages/discord/ext/commands/core.py", line 1647, in invoke
+    await super().invoke(ctx)
+  File "/home/runner/Uni-Python-Bot/venv/lib/python3.8/site-packages/discord/ext/commands/core.py", line 1023, in invoke
+    await injected(*ctx.args, **ctx.kwargs)  # type: ignore
+  File "/home/runner/Uni-Python-Bot/venv/lib/python3.8/site-packages/discord/ext/commands/core.py", line 238, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: NameError: name 'Locales' is not defined
+[2023-03-03 18:56:03] [ERROR  ] discord.client: Ignoring exception in on_command_error
+Traceback (most recent call last):
+  File "/home/runner/Uni-Python-Bot/venv/lib/python3.8/site-packages/discord/ext/commands/core.py", line 229, in wrapped
+    ret = await coro(*args, **kwargs)
+  File "/home/runner/Uni-Python-Bot/cogs/Information.py", line 23, in info
+    title=Locales.get(ctx, "embed_title", cmd="info"),
+NameError: name 'Locales' is not defined
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/runner/Uni-Python-Bot/venv/lib/python3.8/site-packages/discord/client.py", line 409, in _run_event
+    await coro(*args, **kwargs)
+  File "/home/runner/Uni-Python-Bot/cogs/Listeners.py", line 40, in on_command_error
+    raise error
+  File "/home/runner/Uni-Python-Bot/venv/lib/python3.8/site-packages/discord/ext/commands/bot.py", line 1349, in invoke
+    await ctx.command.invoke(ctx)
+  File "/home/runner/Uni-Python-Bot/venv/lib/python3.8/site-packages/discord/ext/commands/core.py", line 1642, in invoke
+    await ctx.invoked_subcommand.invoke(ctx)
+  File "/home/runner/Uni-Python-Bot/venv/lib/python3.8/site-packages/discord/ext/commands/core.py", line 1023, in invoke
+    await injected(*ctx.args, **ctx.kwargs)  # type: ignore
+  File "/home/runner/Uni-Python-Bot/venv/lib/python3.8/site-packages/discord/ext/commands/core.py", line 238, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: NameError: name 'Locales' is not defined
+[2023-03-03 18:57:30] [INFO   ] discord.client: logging in using static token
+[2023-03-03 18:57:44] [INFO   ] discord.client: logging in using static token
+[2023-03-03 18:58:04] [INFO   ] discord.client: logging in using static token
+[2023-03-03 19:04:05] [INFO   ] discord.client: logging in using static token
+[2023-03-03 19:04:08] [INFO   ] discord.gateway: Shard ID 0 has connected to Gateway (Session ID: 3d6281ccec3f9c0d3f34e77319bc80d9).
+[2023-03-03 19:04:10] [INFO   ] bot: Ready: Uni ✨#4378 (ID: 924198727533600798)
+[2023-03-04 03:11:31] [INFO   ] discord.client: logging in using static token
+[2023-03-04 03:11:32] [INFO   ] discord.gateway: Shard ID 0 has connected to Gateway (Session ID: 914b3861e7d3a1209b4bedcfd6c7a8f9).
+[2023-03-04 03:11:34] [INFO   ] bot: Ready: Uni ✨#4378 (ID: 924198727533600798)
+[2023-03-04 05:30:15] [INFO   ] discord.client: logging in using static token
+[2023-03-04 05:30:19] [INFO   ] discord.gateway: Shard ID 0 has connected to Gateway (Session ID: b2214cc060f8d3fde6b7753490094af0).
+[2023-03-04 05:30:21] [INFO   ] bot: Ready: Uni ✨#4378 (ID: 924198727533600798)
+[2023-03-04 05:36:10] [INFO   ] discord.client: logging in using static token
+[2023-03-04 05:36:12] [INFO   ] discord.gateway: Shard ID 0 has connected to Gateway (Session ID: 1edbc8481f4e420474047419e56824e8).
+[2023-03-04 05:36:14] [INFO   ] bot: Ready: Uni ✨#4378 (ID: 924198727533600798)
+[2023-03-04 06:35:11] [INFO   ] discord.client: logging in using static token
+[2023-03-04 06:35:17] [INFO   ] discord.gateway: Shard ID 0 has connected to Gateway (Session ID: 5d1add50a7811caa05ced95728ebe5ef).
+[2023-03-04 06:35:19] [INFO   ] bot: Ready: Uni ✨#4378 (ID: 924198727533600798)
+[2023-03-04 06:40:53] [INFO   ] discord.client: logging in using static token
+[2023-03-04 06:40:54] [INFO   ] discord.gateway: Shard ID 0 has connected to Gateway (Session ID: d3822baa24c9d779531a01d805df9ac1).
+[2023-03-04 06:40:57] [INFO   ] bot: Ready: Uni ✨#4378 (ID: 924198727533600798)
+[2023-03-04 06:41:24] [ERROR  ] discord.client: Ignoring exception in on_command_error
+Traceback (most recent call last):
+  File "/home/runner/Uni-Python-Bot/venv/lib/python3.8/site-packages/discord/ext/commands/core.py", line 229, in wrapped
+    ret = await coro(*args, **kwargs)
+  File "/home/runner/Uni-Python-Bot/cogs/Information.py", line 20, in info
+    embed = await Helpers(self.bot).user_info(ctx, user)
+  File "/home/runner/Uni-Python-Bot/cogs/utils/helpers.py", line 52, in user_info
+    embed.add_field(name=field3, value= ", ".join(reversed([r.mention for r in user.roles].remove(f"<@&{ctx.guild.id}>"))))
+TypeError: 'NoneType' object is not reversible
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/runner/Uni-Python-Bot/venv/lib/python3.8/site-packages/discord/client.py", line 409, in _run_event
+    await coro(*args, **kwargs)
+  File "/home/runner/Uni-Python-Bot/cogs/Listeners.py", line 40, in on_command_error
+    raise error
+  File "/home/runner/Uni-Python-Bot/venv/lib/python3.8/site-packages/discord/ext/commands/bot.py", line 1349, in invoke
+    await ctx.command.invoke(ctx)
+  File "/home/runner/Uni-Python-Bot/venv/lib/python3.8/site-packages/discord/ext/commands/core.py", line 1642, in invoke
+    await ctx.invoked_subcommand.invoke(ctx)
+  File "/home/runner/Uni-Python-Bot/venv/lib/python3.8/site-packages/discord/ext/commands/core.py", line 1023, in invoke
+    await injected(*ctx.args, **ctx.kwargs)  # type: ignore
+  File "/home/runner/Uni-Python-Bot/venv/lib/python3.8/site-packages/discord/ext/commands/core.py", line 238, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: TypeError: 'NoneType' object is not reversible
+[2023-03-04 06:42:24] [INFO   ] discord.client: logging in using static token
+[2023-03-04 06:42:25] [INFO   ] discord.gateway: Shard ID 0 has connected to Gateway (Session ID: 721a9572bafe1504c431d95175cd5721).
+[2023-03-04 06:42:27] [INFO   ] bot: Ready: Uni ✨#4378 (ID: 924198727533600798)
+[2023-03-04 06:43:42] [ERROR  ] discord.client: Ignoring exception in on_command_error
+Traceback (most recent call last):
+  File "/home/runner/Uni-Python-Bot/venv/lib/python3.8/site-packages/discord/client.py", line 409, in _run_event
+    await coro(*args, **kwargs)
+  File "/home/runner/Uni-Python-Bot/cogs/Listeners.py", line 40, in on_command_error
+    raise error
+  File "/home/runner/Uni-Python-Bot/venv/lib/python3.8/site-packages/discord/ext/commands/bot.py", line 1349, in invoke
+    await ctx.command.invoke(ctx)
+  File "/home/runner/Uni-Python-Bot/venv/lib/python3.8/site-packages/discord/ext/commands/core.py", line 1647, in invoke
+    await super().invoke(ctx)
+  File "/home/runner/Uni-Python-Bot/venv/lib/python3.8/site-packages/discord/ext/commands/core.py", line 1015, in invoke
+    await self.prepare(ctx)
+  File "/home/runner/Uni-Python-Bot/venv/lib/python3.8/site-packages/discord/ext/commands/core.py", line 932, in prepare
+    await self._parse_arguments(ctx)
+  File "/home/runner/Uni-Python-Bot/venv/lib/python3.8/site-packages/discord/ext/commands/core.py", line 860, in _parse_arguments
+    raise TooManyArguments('Too many arguments passed to ' + self.qualified_name)
+discord.ext.commands.errors.TooManyArguments: Too many arguments passed to jishaku
+[2023-03-04 06:44:21] [ERROR  ] discord.client: Ignoring exception in on_command_error
+Traceback (most recent call last):
+  File "/home/runner/Uni-Python-Bot/venv/lib/python3.8/site-packages/discord/ext/commands/core.py", line 229, in wrapped
+    ret = await coro(*args, **kwargs)
+  File "/home/runner/Uni-Python-Bot/cogs/Information.py", line 24, in info
+    view = Views.UserMenu(ctx, self.bot.config, util)
+NameError: name 'util' is not defined
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/runner/Uni-Python-Bot/venv/lib/python3.8/site-packages/discord/client.py", line 409, in _run_event
+    await coro(*args, **kwargs)
+  File "/home/runner/Uni-Python-Bot/cogs/Listeners.py", line 40, in on_command_error
+    raise error
+  File "/home/runner/Uni-Python-Bot/venv/lib/python3.8/site-packages/discord/ext/commands/bot.py", line 1349, in invoke
+    await ctx.command.invoke(ctx)
+  File "/home/runner/Uni-Python-Bot/venv/lib/python3.8/site-packages/discord/ext/commands/core.py", line 1642, in invoke
+    await ctx.invoked_subcommand.invoke(ctx)
+  File "/home/runner/Uni-Python-Bot/venv/lib/python3.8/site-packages/discord/ext/commands/core.py", line 1023, in invoke
+    await injected(*ctx.args, **ctx.kwargs)  # type: ignore
+  File "/home/runner/Uni-Python-Bot/venv/lib/python3.8/site-packages/discord/ext/commands/core.py", line 238, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: NameError: name 'util' is not defined
+[2023-03-04 06:45:13] [INFO   ] discord.client: logging in using static token
+[2023-03-04 06:45:15] [INFO   ] discord.gateway: Shard ID 0 has connected to Gateway (Session ID: 5cc6b4fd48658ea00748dbb86afaa121).
+[2023-03-04 06:45:17] [INFO   ] bot: Ready: Uni ✨#4378 (ID: 924198727533600798)
+[2023-03-04 06:46:40] [ERROR  ] discord.ui.view: Ignoring exception in view <UserMenu timeout=160.0 children=1> for item <UserSelect placeholder='views' min_values=1 max_values=1 disabled=False>
+Traceback (most recent call last):
+  File "/home/runner/Uni-Python-Bot/venv/lib/python3.8/site-packages/discord/ui/view.py", line 425, in _scheduled_task
+    await item.callback(interaction)
+  File "/home/runner/Uni-Python-Bot/util/Views.py", line 46, in select
+    await self.do_something(interaction, user, msg)
+  File "/home/runner/Uni-Python-Bot/cogs/Information.py", line 22, in run
+    embed = await Helpers(self.bot).user_info(ctx, user)
+  File "/home/runner/Uni-Python-Bot/cogs/utils/helpers.py", line 40, in user_info
+    color=await self.util.image_color(user.display_avatar.url) or discord.Color.dark_embed.value
+  File "/home/runner/Uni-Python-Bot/util/Middleware.py", line 75, in image_color
+    return int(res["data"]["dominant"]["hex"].strip("#"), 16)
+TypeError: 'NoneType' object is not subscriptable
+[2023-03-04 06:47:33] [INFO   ] discord.client: logging in using static token
+[2023-03-04 06:47:35] [INFO   ] discord.gateway: Shard ID 0 has connected to Gateway (Session ID: 4402ec9f7702385ebc8ce07e4f130425).
+[2023-03-04 06:47:37] [INFO   ] bot: Ready: Uni ✨#4378 (ID: 924198727533600798)
+[2023-03-04 06:49:13] [INFO   ] discord.client: logging in using static token
+[2023-03-04 06:49:14] [INFO   ] discord.gateway: Shard ID 0 has connected to Gateway (Session ID: 83df823a41c246e2d1439fe4722324db).
+[2023-03-04 06:49:17] [INFO   ] bot: Ready: Uni ✨#4378 (ID: 924198727533600798)
+[2023-03-04 06:51:33] [INFO   ] discord.client: logging in using static token
+[2023-03-04 06:51:35] [INFO   ] discord.gateway: Shard ID 0 has connected to Gateway (Session ID: 276fab46d6bf0f56285f6b699dabc98b).
+[2023-03-04 06:51:37] [INFO   ] bot: Ready: Uni ✨#4378 (ID: 924198727533600798)
+[2023-03-04 06:54:14] [ERROR  ] discord.ui.view: Ignoring exception in view <UserMenu timeout=160.0 children=1> for item <UserSelect placeholder='views' min_values=1 max_values=1 disabled=False>
+Traceback (most recent call last):
+  File "/home/runner/Uni-Python-Bot/venv/lib/python3.8/site-packages/discord/ui/view.py", line 425, in _scheduled_task
+    await item.callback(interaction)
+  File "/home/runner/Uni-Python-Bot/util/Views.py", line 46, in select
+    await self.do_something(interaction, user, msg)
+  File "/home/runner/Uni-Python-Bot/cogs/Information.py", line 22, in run
+    embed = await Helpers(self.bot).user_info(ctx, user)
+  File "/home/runner/Uni-Python-Bot/cogs/utils/helpers.py", line 40, in user_info
+    color=await self.util.image_color(user.display_avatar.url)
+  File "/home/runner/Uni-Python-Bot/util/Middleware.py", line 78, in image_color
+    return discord.Color.dark_embed().value
+AttributeError: type object 'Colour' has no attribute 'dark_embed'
+[2023-03-04 07:00:27] [INFO   ] discord.client: logging in using static token
+[2023-03-04 07:00:28] [INFO   ] discord.gateway: Shard ID 0 has connected to Gateway (Session ID: 830218ffde9ecf6b5bd40c76d227d785).
+[2023-03-04 07:00:30] [INFO   ] bot: Ready: Uni ✨#4378 (ID: 924198727533600798)
+[2023-03-04 07:03:00] [ERROR  ] discord.ui.view: Ignoring exception in view <UserMenu timeout=160.0 children=1> for item <UserSelect placeholder='views' min_values=1 max_values=1 disabled=False>
+Traceback (most recent call last):
+  File "/home/runner/Uni-Python-Bot/venv/lib/python3.8/site-packages/discord/ui/view.py", line 425, in _scheduled_task
+    await item.callback(interaction)
+  File "/home/runner/Uni-Python-Bot/util/Views.py", line 46, in select
+    await self.do_something(interaction, user, msg)
+  File "/home/runner/Uni-Python-Bot/cogs/Information.py", line 22, in run
+    embed = await Helpers(self.bot).user_info(ctx, user)
+  File "/home/runner/Uni-Python-Bot/cogs/utils/helpers.py", line 40, in user_info
+    color=await self.util.image_color(user.display_avatar.url)
+  File "/home/runner/Uni-Python-Bot/util/Middleware.py", line 78, in image_color
+    return discord.Color.dark_embed().value
+AttributeError: type object 'Colour' has no attribute 'dark_embed'
+[2023-03-04 07:05:56] [INFO   ] discord.client: logging in using static token
+[2023-03-04 07:05:57] [INFO   ] discord.gateway: Shard ID 0 has connected to Gateway (Session ID: b477abade4653c1137e8b56e26bcdbfa).
+[2023-03-04 07:05:59] [INFO   ] bot: Ready: Uni ✨#4378 (ID: 924198727533600798)
+[2023-03-04 07:07:25] [INFO   ] discord.client: logging in using static token
+[2023-03-04 07:07:26] [INFO   ] discord.gateway: Shard ID 0 has connected to Gateway (Session ID: 4f3de997a7435d165edbb59a72bddbdf).
+[2023-03-04 07:07:29] [INFO   ] bot: Ready: Uni ✨#4378 (ID: 924198727533600798)
+[2023-03-04 17:46:04] [INFO   ] discord.client: logging in using static token
+[2023-03-04 17:46:05] [INFO   ] discord.gateway: Shard ID 0 has connected to Gateway (Session ID: 2fa2a26c1c650722193fbb5fb6990d8b).
+[2023-03-04 17:46:08] [INFO   ] bot: Ready: Uni ✨#4378 (ID: 924198727533600798)
+[2023-03-04 17:48:36] [INFO   ] discord.client: logging in using static token
+[2023-03-04 17:48:37] [INFO   ] discord.gateway: Shard ID 0 has connected to Gateway (Session ID: 166dc10c1e9b9201d44b9584600425e7).
+[2023-03-04 17:48:39] [INFO   ] bot: Ready: Uni ✨#4378 (ID: 924198727533600798)
+[2023-03-04 17:51:40] [INFO   ] discord.client: logging in using static token
+[2023-03-04 17:51:41] [INFO   ] discord.gateway: Shard ID 0 has connected to Gateway (Session ID: 3a1cc2432439a3fef1ad925cf891b06b).
+[2023-03-04 17:51:43] [INFO   ] bot: Ready: Uni ✨#4378 (ID: 924198727533600798)
+[2023-03-04 17:57:50] [INFO   ] discord.client: logging in using static token
+[2023-03-04 17:57:52] [INFO   ] discord.gateway: Shard ID 0 has connected to Gateway (Session ID: 0c0a23c093456067b5e7e8da6bf1e00a).
+[2023-03-04 17:57:54] [INFO   ] bot: Ready: Uni ✨#4378 (ID: 924198727533600798)
+[2023-03-04 18:09:20] [INFO   ] discord.client: logging in using static token
+[2023-03-04 18:10:13] [INFO   ] discord.client: logging in using static token
+[2023-03-04 18:11:24] [INFO   ] discord.client: logging in using static token
+[2023-03-04 18:11:25] [INFO   ] discord.gateway: Shard ID 0 has connected to Gateway (Session ID: 10b1e3316f0a970bfc4efffa6243a2e0).
+[2023-03-04 18:11:28] [INFO   ] bot: Ready: Uni ✨#4378 (ID: 924198727533600798)
+[2023-03-04 18:12:07] [INFO   ] discord.client: logging in using static token
+[2023-03-04 18:12:08] [INFO   ] discord.gateway: Shard ID 0 has connected to Gateway (Session ID: 6c177639881b5484be1a0614e1364c4c).
+[2023-03-04 18:12:10] [INFO   ] bot: Ready: Uni ✨#4378 (ID: 924198727533600798)
+[2023-03-04 18:12:20] [ERROR  ] discord.client: Ignoring exception in on_ready
+Traceback (most recent call last):
+  File "/home/runner/Uni-Python-Bot/venv/lib/python3.8/site-packages/discord/client.py", line 409, in _run_event
+    await coro(*args, **kwargs)
+  File "/home/runner/Uni-Python-Bot/cogs/Listeners.py", line 15, in on_ready
+    await Locales.fetch_langs(self.bot)
+  File "/home/runner/Uni-Python-Bot/util/Locales.py", line 35, in fetch_langs
+    langs_cache[str(guild.id)]["lang"] = lang
+KeyError: '769787403854282802'
+[2023-03-04 19:15:51] [INFO   ] discord.client: logging in using static token
+[2023-03-04 19:15:53] [INFO   ] discord.gateway: Shard ID 0 has connected to Gateway (Session ID: 0f28aa9c4822d7952a1858c652ca0abf).
+[2023-03-04 19:15:55] [INFO   ] bot: Ready: Uni ✨#4378 (ID: 924198727533600798)
+[2023-03-04 20:17:04] [INFO   ] discord.client: logging in using static token
+[2023-03-04 20:17:06] [INFO   ] discord.gateway: Shard ID 0 has connected to Gateway (Session ID: 6e4fa7684932aa8cd17c33ec9395c029).
+[2023-03-04 20:17:08] [INFO   ] bot: Ready: Uni ✨#4378 (ID: 924198727533600798)
+[2023-03-05 06:57:26] [INFO   ] discord.client: logging in using static token
+[2023-03-05 06:57:27] [INFO   ] discord.gateway: Shard ID 0 has connected to Gateway (Session ID: cd12df1ed51fd52e109ea76591f9e5c6).
+[2023-03-05 06:57:30] [INFO   ] bot: Ready: Uni ✨#4378 (ID: 924198727533600798)

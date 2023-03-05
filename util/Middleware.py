@@ -72,7 +72,10 @@ class Util:
         res = await self.request(
             url=f"https://api.munlai.fun/json/dominant?image={image}",
         )
-        return int(res["data"]["dominant"]["hex"].strip("#"), 16)
+        if res:
+            return int(res["data"]["dominant"]["hex"].strip("#"), 16)
+        else:
+            return 2829617
 
 
 class RemoveNoise(logging.Filter):

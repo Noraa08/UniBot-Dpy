@@ -16,11 +16,9 @@ import discord
 T = TypeVar('T')
 
 class UserMenu(ui.View):
-    def __init__(self, ctx: commands.Context, config, util):
+    def __init__(self, ctx: commands.Context):
         super().__init__(timeout=160.0)
         self.ctx = ctx
-        self.config = config
-        self.util = util
     
     async def do_something(self, interaction: Interaction, user: User, message: Message):
         embed = discord.Embed(title="Editado!")
@@ -29,8 +27,8 @@ class UserMenu(ui.View):
       
     async def interaction_check(self, interaction: Interaction):
         if self.ctx.author.id != interaction.user.id:
-            emojis = choice(self.config["ERROR_EMOJIS"])
-            text = (self.util.locale(self.ctx, "not_author", type="Interactions"))
+            emojis = choice(self.ctx.bot.config["ERROR_EMOJIS"])
+            text = (Locales.get(self.ctx, "not_author", type="Interactions"))
             res = f"{text} {emojis}"
             await interaction.response.send_message(
                 f"_ _ <:eg_wrong:1029412572899836055> {res}",

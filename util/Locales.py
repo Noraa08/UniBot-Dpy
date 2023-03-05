@@ -3,8 +3,14 @@ from discord.ext import commands
 from main import langs_cache
 from random import choice 
 
-async def get(ctx: commands.Context, cog: str, command: str, key: str, **kwargs):
-    lang = await ctx.bot.db.get(ctx.guild.id, "language", "guilds")
+async def get(
+    ctx: commands.Context,
+    key: str,
+    *,
+    cog: str = None, 
+    command: str = None, 
+    **kwargs):
+    lang = langs_cache[str(ctx.guild.id)]["lang"] or "es"
     try:
         txt = langs_cache[cog][command][lang][key]
         for x, y in kwargs.items():
@@ -14,7 +20,7 @@ async def get(ctx: commands.Context, cog: str, command: str, key: str, **kwargs)
         print(x)
         return key
     
-def fetch_langs(bot: commands.Bot):
+async def fetch_langs(bot: commands.Bot):
     for cog_name, cog in bot.cogs.items():
         for cmd in cog.__cog_commands__:
             cmd_name = str(cmd.qualified_name).replace(' ', '_').lower()
@@ -25,7 +31,10 @@ def fetch_langs(bot: commands.Bot):
                 langs_cache[cog_name][cmd_name] = res.json()
             else:
                 pass
-
+    for guild in bot.guilds:
+        lang = await bot.db.get(guild.id, "language", "guilds")
+        langs_cache[str(guild.id)] = {} 
+        langs_cache[str(guild.id)]["lang"] = lang
 
 async def send(
         ctx: commands.Context,

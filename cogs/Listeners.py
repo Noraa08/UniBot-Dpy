@@ -12,7 +12,7 @@ class Listeners(commands.Cog):
     
     @commands.Cog.listener()
     async def on_ready(self):
-        Locales.fetch_langs(self.bot)
+        await Locales.fetch_langs(self.bot)
         await self.bot.tree.sync()
     
     @commands.Cog.listener()
